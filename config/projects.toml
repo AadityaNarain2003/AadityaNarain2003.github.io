@@ -85,8 +85,38 @@ Followed the Design Thinking method to solve a problem for students.
 title = "Sports Council Website"
 category = "Software Engineering"
 image = "./config/assets/projects/sportscouncil.jpeg"
-url = "sports.iiit.ac.in"
-source = "sports.iiit.ac.in"
+url = "https://sports.iiit.ac.in"
+source = "https://sports.iiit.ac.in"
 description = """
 Made a complete SDLC project that is being used by 1500 users 
+"""
+
+[[project]]
+title = "Network File System"
+category = "Software Engineering"
+image = "./config/assets/projects/network.svg"
+url = "https://github.com/AadityaNarain2003/Network-File-System"
+source = "https://github.com/AadityaNarain2003/Network-File-System"
+description = """
+Created a Network file System
+"""
+
+[[project]]
+title = "C Shell"
+category = "Software Engineering"
+image = "./config/assets/projects/bash.svg"
+url = "https://github.com/AadityaNarain2003/C-Shell"
+source = "https://github.com/AadityaNarain2003/C-Shell"
+description = """
+Created a C shell
+"""
+
+[[project]]
+title = "Rendering Engine"
+category = "Others"
+image = "./config/assets/projects/engine.svg"
+url = ""
+source = ""
+description = """
+Worked on a Rendering Engine that uses Ray Tracing
 """
