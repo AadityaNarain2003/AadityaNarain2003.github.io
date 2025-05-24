@@ -1,601 +1,1660 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script>
-        location.replace('/jinja');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DileepAdari Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,100;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!--meta-->
+  <title>Aaditya Vardhan Narain | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A passionate developer and researcher. Fascinated with HCI and VR technology. I love to explore systems and system design.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://Aaditya_Narain.github.io">
+  <meta property="og:title" content="Aaditya Vardhan Narain | Software Developer | Portfolio">
+  <meta property="og:description" content="A passionate developer and researcher. Fascinated with HCI and VR technology. I love to explore systems and system design.">
+  <meta property="og:image" content="./config/assets/avatars/narain.jpg">
+  <meta property="og:image:secure_url" content="./config/assets/avatars/narain.jpg">
+  <meta property="og:site_name" content="Aaditya Vardhan Narain | Software Developer | Portfolio">
+  <meta name="twitter:card" content="photo">
+  <meta name="twitter:creator" content="@Aaditya_Narain">
+  <meta name="twitter:title" content="Aaditya Vardhan Narain | Software Developer | Portfolio">
+  <meta name="twitter:description" content="A passionate developer and researcher. Fascinated with HCI and VR technology. I love to explore systems and system design.">
+  <meta name="twitter:image" content="./config/assets/avatars/narain.jpg">
+  <meta name="twitter:image:width" content="200">
+  <meta name="twitter:image:height" content="200">
+  <meta name="keywords" content="Aaditya Vardhan Narain, java, unity, python, c, javascript, git, html, css, mysql, mongodb, linux, docker, nginx, react, nodejs, postman, flask, nextjs, sqlite, csharp" />
+  <link href="https://Aaditya_Narain.github.io" rel="canonical">
+  <!--meta-->
+
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./src/images/user.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./src/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!--header-->
-    <header>
-        <a href="" class="logo">Dileep<span class="logo thoka">Kumar</span> <span>A.</span></a>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#interest">Interests</a></li>
-            <li><a href="/cv/" target="_blank">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="top-btn con">
-            <a href="mailto:adaridileep@gmail.com" class="h-btn">Contact me</a>
-        </div>
-    </header>
+  <!--
+    - #MAIN
+  -->
 
-    <!--homepage-->
-    <section class="homepage" id="home">
-        <div class="bg-img" data-aos="zoom-in-down">
-            <img src="images/background.png" alt="image" loading="lazy">
-        </div>
-        <div class="main-content" data-aos="zoom-in-up">
-            <h4>Hi, There!</h4>
-            <h1>I'm <span>Dileep Kumar</span></h1>
-            <p>A passionate web developer and programmer. My journey revolves around the enchanting world of software engineering, where I thrive on turning ideas into reality through the art of coding. With a keen interest in crafting digital solutions, my focus is on creating seamless and innovative experiences. Welcome to my portfolio, where every line of code tells a story of creativity and precision in the realm of web development</p>
-            <div class="social">
-                <a href="https://www.facebook.com/dileep.adari" target="_blank"><i class="ri-facebook-fill"></i></a>
-                <a href="https://www.instagram.com/dileepadari" target="_blank"><i class="ri-instagram-fill"></i></a>
-                <a href="https://www.linkedin.com/in/dileep-kumar-adari-298169252/" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-                <a href="https://medium.com/@adaridileep/about" target="_blank"><i class="ri-medium-fill"></i></a>
-                <a href="https://twitter.com/Dileepadari1" target="_blank"><i class="ri-twitter-fill"></i></a>
-                <a href="https://www.youtube.com/channel/UCi5zNthz3a2iOa0VVy3QH8Q" target="_blank"><i class="ri-youtube-fill"></i></a>
-            </div>
-            <div class="main-btn">
-                <a href="https://github.com/Dileepadari" class="btn" target="_blank"><i class="ri-github-fill"></i> GitHub</a>
-                <a href="docs/portfolio.pdf" class="btn btn2" target="_self" download="dileep_portfolio">Download Resume</a>
-            </div>
-        </div>
-    </section>
+  <main>
 
-    <!--about page-->
-    <section class="aboutpage" id="about">
-        <div class="about-text" data-aos="zoom-in-down">
-            <h2>I am a <span>Programmer</span><br> & <span>Web Developer</span> </h2>
-            <div class="exp-area">
-                <p class="exp">
-                    Education:
-                    <span>B-Tech Year 2*</span>
-                </p>
-                <p class="exp">
-                    College:
-                    <span>IIIT Hyderabad</span>
-                </p>
-                <p class="exp">
-                    Skills:
-                    <span>HTML, CSS, JS, PHP, Python, MERN</span>
-                </p>
-                <p class="exp">
-                    Address:
-                    <span>Vishakapatnam, AP</span>
-                </p>
-                <p class="exp">
-                    Email:
-                    <span>adaridileep@gmail.com</span>
-                </p>
-                <p class="exp">
-                    Contact:
-                    <span>7330701217</span>
-                </p>
-                <p class="exp">
-                    Freelance:
-                    <span>Available</span>
-                </p>
-            </div>
-            <a href="#projects" class="btn">View all projects</a>
-        </div>
-        <div class="about-img" data-aos="zoom-in-up">
-            <img src="images/profilepic.jpeg" alt="Profile Picture" style="filter: brightness(0.89);" loading="lazy">
-        </div>
-    </section>
+    <!--
+      - #SIDEBAR
+    -->
 
+    <!-- sidebar.jinja -->
+<aside class="sidebar" data-sidebar>
 
-    
-    <!-- projects page -->
-    <section class="projectpage" id="projects">
-        <div class="center-text" data-aos="fade-down">
-            <h2>My <span>Projects</span></h2>
-        </div>
-        <div class="project-content" data-aos="zoom-in-up">
-            <div class="row">
-                <img src="images/greenplant.jpg" alt="project image 1" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Green Plant</h5>
-                        <p>A user-friendly website offering real-time plant condition information via sensor data. Designed using flask, HTML, CSS for plant enthusiasts, gardeners, and indoor growers, it provides an intuitive interface for easy access to plant data.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Smart_farming.git" target="_blank">View Source</a>
-                    <a href="https://greenplant.pythonanywhere.com" target="_blank">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/NFS.jpeg" alt="project image 2" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Network File System</h5>
-                        <p>Developed a fault-tolerant distributed file system with TCP sockets and POSIX C, ensuring redundancy and Managed concurrent client access and implemented performance optimizations. A simple network file system with multiples client and backup servers.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Network_File_System" target="_blank">View Source</a>
-                    <a href="https://github.com/Dileepadari/Network_File_System" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/blogsite.jpg" alt="project image 3" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Blog Website</h5>
-                        <p>A Blog website with login, post, comments, categories, etc. features using Next, React, Node, MongoDB etc. A Blog website with all the features of a blog for college level. Simple UI configured and dark mode and light modes are enabled based on user preference.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Blog_Website_MERN" target="_blank">View Source</a>
-                    <a href="https://github.com/Dileepadari/Blog_Website_MERN" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/smartgrid.jpg" alt="project image 4" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Smart PowerGrid</h5>
-                        <p>Designed IoT project for secure, energy-saving grid management. Implemented sensor deployment, UI design for data visualization, Controlling Appliances through web and shortage alerts. Report, status and preferences were implemented in addition.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Smart-Powergrid" target="_blank" >View Source</a>
-                    <a href="https://smart-powergrid.000webhostapp.com/" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/facebook.jpg" alt="project image 5" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Facebook Clone</h5>
-                        <p>
-                            A Facebook Clone website with login, post, groups, friends, notifications and personal messaging etc. features using PHP, HTML, CSS, JS etc. A Social Media website with all the features of facebook for college level (specially made for Rguktians).
-                        </p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Facebook_using_php" target="_blank" class="dis">View Source</a>
-                    <a href="https://lifeofiiith.rf.gd" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/musicmania.jpeg" alt="project image 6" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Music Mania</h5>
-                        <p>Developed a music Review website allowing users to see artists, albums and songs, see their music revews. Implemented features such as playlist creation, song samples, and multiple users. Developed based on requirements of ISS Course Project.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/ISSproject1/tree/phase3" target="_blank">View Source</a>
-                    <a href="https://music-mania.pythonanywhere.com" target="_blank">Open Demo</a>
-                </div>
-            </div>
+  <div class="sidebar-info">
 
-            <!-- <div class="row">
-                <img src="images/digitallibrary.jpg" alt="project image 1" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Digital Library</h5>
-                        <p> using php, html, css, js, sql etc.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Adaridileep/facebook-clone" target="_blank">View Source</a>
-                    <a href="https://github.com/AdarIdileep/React-Projects/tree/main/facebook-clone" target="_blank">Open Demo</a>
-                </div>
-            </div> -->
-        </div>
-        <div class="project-content2" data-aos="zoom-in-up" id="more-projs">
-            <div class="row">
-                <img src="images/vscode-extension.png" alt="project image 7" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>A VsCode Web extension for Virtual labs</h5>
-                        <p>This web extension is a part of the Virtual Labs project. It is a VSCode extension that provides a set of commands to interact with the Virtual Labs API. You can clone and change the experiment as per your requirements, test it and make a pull request.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/virtual_web_trial" target="_blank">View Source</a>
-                    <a href="https://marketplace.visualstudio.com/items?itemName=Virtual-Labs.VirtualLabs" target="_blank">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/attendance.png" alt="project image 8" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Attendace Management System</h5>
-                        <p>An Attendace Management System for college level with login, attendance, class wise reports, student wise reports using excel sheets and php, html, css, js etc. The system is designed to be simple and easy to use by the faculty as per requirements of RGUKT staff.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Attendance_management_system_php" target="_blank">View Source</a>
-                    <a href="https://rgukt-attend.000webhostapp.com/" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/splitbill.jpeg" alt="project image 9" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Split bill - Coin Connect</h5>
-                        <p>Coin Connect is a web application for splitting the bill and making groups of friends. It makes easy for people to split their expenses when they go out together and have a party. It is useful to maintain the transactions and the pending bills among friends.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Hackathon42" target="_blank">View Source</a>
-                    <a href="https://dileepadari.pythonanywhere.com/" target="_blank">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/authentication.png" alt="project image 10" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Authentication System</h5>
-                        <p>A simple login and signup form using HTML, CSS, JavaScript and validated using MERN. The Authentication system is done with safety and through secured channel and error validation is tested for maximum possible cases. It can be simply embeded in any other project.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/Authentication_Using_MERN" target="_blank">View Source</a>
-                    <a href="https://github.com/Dileepadari/Authentication_Using_MERN" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/digitallibrary.jpeg" alt="project image 5" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Digital library</h5>
-                        <p>A digital library in which users can access and also uploads the files. The library is with categories and every thing is well organised. A reviewer reviews the books that are being uploaded by the user. This is helpful in getting all the required content at single place.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/digital_library" target="_blank" class="dis">View Source</a>
-                    <a href="https://github.com/Dileepadari/digital_library" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="images/stopwatch.png" alt="project image 6" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Stop Watch</h5>
-                        <p>A stop watch app built using React js. This is built for fun , not for any specific purpose. This project was given by Quantum computing club in my college for selecting the students who are freshers to college. I got shortlisted by this project. We can use it in competitions.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Dileepadari/stopwatch" target="_blank">View Source</a>
-                    <a href="https://github.com/Dileepadari/stopwatch" target="_blank" class="dis">Open Demo</a>
-                </div>
-            </div>
-            
-            <!-- <div class="row">
-                <img src="images/digitallibrary.jpg" alt="project image 1" loading="lazy">
-                <div class="main-row">
-                    <div class="row-text">
-                        <h5>Digital Library</h5>
-                        <p> using php, html, css, js, sql etc.</p>
-                    </div>
-                </div>
-                <div class="source-links">
-                    <a href="https://github.com/Adaridileep/facebook-clone" target="_blank">View Source</a>
-                    <a href="https://github.com/AdarIdileep/React-Projects/tree/main/facebook-clone" target="_blank">Open Demo</a>
-                </div>
-            </div> -->
-        </div>
-        <div class="top-btn more-btn">
-            <a class="h-btn" id="more-btn">Show More</a>
-        </div>
-    </section>
-    
-    <!-- interest page -->
-    <section class="interestpage" id="interest">
-        <div class="center-text" data-aos="fade-down">
-            <h2>What I <span>Know</span></h2>
-        </div>
-        <div class="interest-content" data-aos="zoom-in-up">
-            <div class="row">
-                <div class="row-text">
-                    <h4>Frontend</h4>
-                </div>
-                <div class="main-row">
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="ri-html5-fill"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            HTML
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="ri-css3-fill"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            CSS
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxs-file-js"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Javascript
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-react"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            ReactJs
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-jquery"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            JQuery
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-bootstrap"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Bootstrap
-                        </h6>
-                    </div>
-                </div>
-            </div>
+    <figure class="avatar-box">
+      <img src="./config/assets/avatars/narain.jpg" alt="Aaditya Vardhan Narain" width="80" style="border-radius: 10px;object-fit: cover;">
+    </figure>
 
-            <div class="row">
-                <div class="row-text">
-                    <h4>Backend</h4>
-                </div>
-                <div class="main-row">
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-flask"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Flask
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-django"></i>
-                        </div>
-                        <h6 class="skill-content">
-                            Django
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-php"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            PHP
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxs-file-js"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Next.js
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-nodejs"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            NodeJS
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-file-js"></i>
-                        </div>
-                        <h6 class="skill-content">
-                            ExpressJS
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-c-plus-plus"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            C++
-                        </h6>
-                    </div>
-                </div>
-            </div>
+    <div class="info-content">
+      <h1 class="name" title="Aaditya Vardhan Narain">Aaditya Vardhan Narain</h1>
 
-            <div class="row">
-                <div class="row-text">
-                    <h4>Database</h4>
-                </div>
-                <div class="main-row">
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class=""></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            MySQL
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class=""></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            SQLite
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-mongodb"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Mongodb
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class=""></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Mariadb
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-postgresql"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            PostgreSQL
-                        </h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="row-text">
-                    <h4>Devops</h4>
-                </div>
-                <div class="main-row">
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-git"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Git
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-docker"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Docker
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class=""></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Selenium
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-gitlab"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            Gitlab
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-aws"></i>
-                        </div> 
-                        <h6 class="skill-content">
-                            AWS
-                        </h6>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <i class="bx bxl-wordpress"></i>
-                        </div>
-                        <h6 class="skill-content">
-                            Wordpress
-                        </h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contactpage" id="contact">
-        <div class="center-text" data-aos="fade-down">
-            <h2>Contact <span>Me</span></h2>
-        </div>
-        <div class="contact-content">
-            <div class="contact-container" data-aos="zoom-in">
-                <h2>Lets Work Together</h2>
-                <p>
-                    I am available for freelance work. If you are looking to collaborate on a project, need a website, or just want to say hi, feel free to send me a message. I am always open to new opportunities and challenges. I look forward to hearing from you!
-                </p>
-                <div class="contact">
-                    <b>Contact: </b>
-                    <a href="mailto: rs200302@rguktsklm.ac.in" target="_blank">
-                        rs200302@rguktsklm.ac.in
-                    </a>
-                </div>
-                <div class="phone">
-                <b>Phone: </b>
-                <a href="tel:7330701217" target="_blank">
-                    7330701217
-                </a>
-            </div>
-            <div class="social" id="socialmediaicons">
-                <a href="https://www.facebook.com/dileep.adari" target="_blank"><i class="ri-facebook-fill"></i></a>
-                <a href="https://www.instagram.com/dileepadari" target="_blank"><i class="ri-instagram-fill"></i></a>
-                <a href="https://github.com/Dileepadari" target="_blank"><i class="ri-github-fill"></i></a>
-                <a href="https://www.linkedin.com/in/dileep-kumar-adari-298169252/" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-                <a href="https://medium.com/@adaridileep/about" target="_blank"><i class="ri-medium-fill"></i></a>
-                <a href="https://twitter.com/Dileepadari1" target="_blank"><i class="ri-twitter-fill"></i></a>
-                <a href="https://www.youtube.com/channel/UCi5zNthz3a2iOa0VVy3QH8Q" target="_blank"><i class="ri-youtube-fill"></i></a>
-            </div>
-        </div>
-        <div class="contact-form" data-aos="zoom-in">
-            <form action="https://formspree.io/f/meqypdyv" method="POST">
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
-                <input type="email" name="email"  placeholder="Email Address..." required>
-                <textarea name="message" id="msg" cols="30" rows="10" placeholder="Write your message here..." required></textarea>
-                <div class="form-btns">
-                    <input type="reset" value="Clear message" class="send-btn reset">
-                    <input type="submit" value="Send message" class="send-btn send">
-                </div>
-            </form>
-        </div>
-        </div>
-    </section>
-    
-    <div class="footer">
-        <div class="copyright">
-            <p>@<i id="year"></i> <span>DileepAdari</span>, All Rights Reserved.</p>
-            <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
-        </div>
-        <a href="#home" class="scroll-top">
-            <i class="bx bxs-rocket"></i>
-        </a>
+      <p class="title">Software Developer</p>
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset: 150,
-            duration: 800,
-        });
-    </script>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="sidebar-info_more">
+
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+
+          <a href="mailto:aaditya.narain.avna@gmail.com" class="contact-link">aaditya.narain.avna@gmail.com</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="phone-portrait-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Phone</p>
+
+          <a href="tel:+91 8860888440" class="contact-link">+91 8860888440</a>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Birthday</p>
+
+          <time datetime="April 27, 2003">April 27, 2003</time>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+
+          <address>Hyderabad, India</address>
+        </div>
+
+      </li>
+
+    </ul>
+
+    <div class="separator"></div>
+
+    <ul class="social-list">
+
+      
+      <li class="social-item">
+        <a href="https://www.instagram.com/aaditya_narain/" class="social-link" , target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+      
+      <li class="social-item">
+        <a href="https://www.linkedin.com/in/aaditya-vardhan-narain-9142581b5" class="social-link" , target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      
+      <li class="social-item">
+        <a href="https://github.com/aaditya_narain" class="social-link" , target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+      
+
+    </ul>
+
+  </div>
+
+</aside>
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <!-- navbar.jinja -->
+<nav class="navbar">
+
+  <ul class="navbar-list">
+
+    <li class="navbar-item">
+      <button class="navbar-link  active" data-nav-link>About</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Resume</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Projects</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Blogs</button>
+    </li>
+
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link>Contact</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <!-- about.jinja -->
+<article class="about  active" data-page="about">
+
+  <header>
+    <h2 class="h2 article-title">About me</h2>
+  </header>
+
+  <section class="about-text">
+
+    
+    
+    <p>A passionate developer and researcher. Fascinated with HCI and VR technology. I love to explore systems and system design.</p>
+    
+    
+
+  </section>
+
+
+  <!--
+          - service
+        -->
+
+  <section class="service">
+
+    <h3 class="h3 service-title">What i'm doing</h3>
+
+    <ul class="service-list">
+      
+
+      <li class="service-item">
+
+        <div class="service-icon-box">
+          <img src="./config/assets/icons/laptop-code.svg" alt="design icon" width="30" height="30">
+        </div>
+
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">FullStack Development</h4>
+
+          <p class="service-item-text">
+            I have a strong foundation in web development and I am passionate about creating user-friendly and scalable web applications.
+
+          </p>
+        </div>
+
+      </li>
+
+      
+
+      <li class="service-item">
+
+        <div class="service-icon-box">
+          <img src="./config/assets/icons/compass.svg" alt="design icon" width="30" height="30">
+        </div>
+
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Research</h4>
+
+          <p class="service-item-text">
+            I work in SERC, IIIT Hyderabad as a MS by Research Student. I work in the domain of HCI at the intersection of Personality Computing and VR technologies.
+
+          </p>
+        </div>
+
+      </li>
+
+      
+
+      <li class="service-item">
+
+        <div class="service-icon-box">
+          <img src="./config/assets/icons/mobile.svg" alt="design icon" width="30" height="30">
+        </div>
+
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">System Design</h4>
+
+          <p class="service-item-text">
+            I like understand and designing systems that go beyond what it is currently today.
+
+          </p>
+        </div>
+
+      </li>
+
+      
+
+      <li class="service-item">
+
+        <div class="service-icon-box">
+          <img src="./config/assets/icons/vr.png" alt="design icon" width="30" height="30">
+        </div>
+
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">VR and Gamification</h4>
+
+          <p class="service-item-text">
+            I like to understand how Gamification and VR can be used in the applied domains of psychology, game design and other applications.
+
+          </p>
+        </div>
+
+      </li>
+
+      
+
+    </ul>
+
+  </section>
+
+
+  <!--
+          - testimonials
+        -->
+  
+  <section class="testimonials">
+
+    <h3 class="h3 testimonials-title">Soft Skills</h3>
+
+    <ul class="testimonials-list has-scrollbar">
+      
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./config/assets/icons/gear.svg" alt="Problem Solving" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>Problem Solving</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              I am creative and efficient in identifying and solving technical problems or bugs.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./config/assets/icons/comment.svg" alt="Effective Communication" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>Effective Communication</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              I have the skill to convey ideas clearly and concisely, both technically and non-technically.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./config/assets/icons/bolt.svg" alt="Fast Learner" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>Fast Learner</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              I have the ability to quickly acquire new knowledge and adapt to changing technological environments.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      
+
+      <li class="testimonials-item">
+        <div class="content-card" data-testimonials-item>
+
+          <figure class="testimonials-avatar-box">
+            <img src="./config/assets/icons/user.svg" alt="Teamwork" width="60" data-testimonials-avatar>
+          </figure>
+
+          <h4 class="h4 testimonials-item-title" data-testimonials-title>Teamwork</h4>
+
+          <div class="testimonials-text" data-testimonials-text>
+            <p>
+              I collaborate effectively in multidisciplinary projects and communicate clearly with team members.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      
+
+      < </ul>
+
+  </section>
+
+
+
+  <!--
+          - testimonials modal
+        -->
+
+  <div class="modal-container" data-modal-container>
+
+    <div class="overlay" data-overlay></div>
+
+    <section class="testimonials-modal">
+
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box">
+          <img src="./src/images/icon-photo.svg" alt="Aaditya Vardhan Narain" width="80" data-modal-img>
+        </figure>
+
+        <img src="./src/images/icon-quote.svg" alt="quote icon">
+      </div>
+
+      <div class="modal-content">
+
+        <h4 class="h3 modal-title" data-modal-title>Aaditya Vardhan Narain</h4>
+
+        
+
+        <div data-modal-text>
+          <p>
+            
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <!--
+          - clients
+        -->
+  
+  <section class="clients">
+
+    <h3 class="h3 clients-title">Tech Experience</h3>
+
+    <ul class="clients-list has-scrollbar">
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/java.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/unity.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/python.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/c.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/javascript.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/git.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/html.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/css.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/mysql.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/mongodb.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/linux.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/docker.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/nginx.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/react.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/nodejs.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/postman.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/flask.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/nextjs.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/sqlite.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="./config/assets/icons/csharp.svg" alt="client logo" width="50" height="50">
+        </a>
+      </li>
+
+      
+
+    </ul>
+
+  </section>
+  
+
+</article>
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <!-- resume.jinja -->
+<article class="resume" data-page="resume">
+
+  <header>
+    <h2 class="h2 article-title">Resume <a href="./../../../docs/portfolio.pdf" style="text-decoration:none;font-size: 15px;" target="_blank" download>(Download)</a></h2>
+  </header>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Education</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">International Institute of Information Technology, Hyderabad</h4>
+
+        <span>2022 - Present</span>
+
+        <p class="timeline-text">
+          B.Tech and M.S. by Research in Computer Science & Engineering - 8.15 CGPA (current)
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">D.P.S. RKPuram, New Delhi</h4>
+
+        <span>2019 - 2021</span>
+
+        <p class="timeline-text">
+          CBSE Class 12th - 96%
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Wynberg-Allen School, Mussoorie</h4>
+
+        <span>2012 - 2018</span>
+
+        <p class="timeline-text">
+          ICSE Class 10th - 94.8%
+        </p>
+
+      </li>
+
+      
+
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Undergraduate Researcher (SERC lab, IIITH)</h4>
+
+        <span>April 2024 - Present</span>
+
+        <p class="timeline-text">
+          Conducting research under Dr. Raman Saxena focusing on human-centered design and design thinking methodologies. Completed a summer project that provided valuable insights into gathering user opinions/problems on present existing Institute Management system and applying them to design effective, user-friendly solutions.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Project Lead ( Sports Council Website )</h4>
+
+        <span>August 2024 – Present</span>
+
+        <p class="timeline-text">
+          Initiated, Designed, Developed and Maintain the Website for Sports Council IIIT-Hyderabad, while leading 2 developers on the same. The Website achieved over 1500 users.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Tech Team Member ( Research Day Website)</h4>
+
+        <span>January 2025 - March 2025</span>
+
+        <p class="timeline-text">
+          Worked alongside a team of 4 to develop the Research Day Website with next.js and fastAPI.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Teaching Assistant ( Introduction to Software System )</h4>
+
+        <span>January 2025 - April 2025</span>
+
+        <p class="timeline-text">
+          Helped the course instuctor teach over 250 students the basics of Software Systems that included Git ,Bash ,Python, Mongo, SQL, FastAPI and other similar softwares . Helped design lab assessment and exam questions
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Teaching Assistant ( Computer Programming )</h4>
+
+        <span>August 2024 - November 2024</span>
+
+        <p class="timeline-text">
+          Helped the course instuctor teach over 350 students the basics of C Programming. Helped design lab assessment questions
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Software Intern (VILS AI)</h4>
+
+        <span>January 2024 - April 2024</span>
+
+        <p class="timeline-text">
+          Worked on a web development task where using FastApi, React, Alembic, MySQL and Mongo, I was required to build a complete system. Engaged in continuous meetings with clients, honing my ability to interact effectively, gather valuable feedback, and understand the project process flow comprehensively
+        </p>
+
+      </li>
+
+      
+
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Extra-Curricular</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Sports Deputy Secretary</h4>
+
+        <span>August 2024 - July 2025</span>
+
+        <p class="timeline-text">
+          Coordinated and Lead a team of 29 members which hosted 6 events around the campus. Hosted 2 events with more than 900 participants. Developed a website for the team. Designed the new logo for the team and lead the social media team.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Member and Coordinator ASEC ( Sports Club )</h4>
+
+        <span>August 2022 - August 2024</span>
+
+        <p class="timeline-text">
+          Hosted over 30 events in a spam of 2 years. Lead the team for the second year.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Member and Coordinator TVRQC ( Quizzing Club )</h4>
+
+        <span>August 2022 - August 2024</span>
+
+        <p class="timeline-text">
+          Hosted over 30 events in a spam of 2 years. Lead the team for the second year.
+        </p>
+
+      </li>
+
+      
+
+    </ol>
+
+  </section>
+
+   
+   <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="trophy-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Achievements</h3>
+    </div>
+
+    <ol class="timeline-list">
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">IIIT Run 2025</h4>
+
+        <span>Feburary 2025</span>
+
+        <p class="timeline-text">
+          5k Marathon 3rd Place
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Megathon Finalist 2023</h4>
+
+        <span>October 2023</span>
+
+        <p class="timeline-text">
+          Finalist in Megathon 2023 where we were amongst the top 6 teams.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">IIT- Madras ( Foundational Level in Programming and Data Science)</h4>
+
+        <span>August 2022</span>
+
+        <p class="timeline-text">
+          Received a certicate from IIT- Madras on Foundational Level in Porgramming and Data Science.
+        </p>
+
+      </li>
+
+      
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">Silver Batch ( IAYP )</h4>
+
+        <span>March 2019</span>
+
+        <p class="timeline-text">
+          Received a Batch for doing social work around Mussoorie
+        </p>
+
+      </li>
+
+      
+
+    </ol>
+
+  </section>
+  
+
+  <!-- My Skills -->
+
+  
+  <section class="skill">
+
+    <h3 class="h3 skills-title">Courses</h3>
+
+    <ul class="skills-list content-card courses" style="padding-bottom: 0;">
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Discrete Structures</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Real Analysis</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Linear Algebra</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Probability and Statistics</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Computer Programming</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Digital Systems and Microcontrollers</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Introduction to IoT</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Computer Systems Organization</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Data Structures and Algorithms</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Introduction to Software Systems</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Operating Systems and Networks</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Software Programming for Performance</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Computer Graphics</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Design and Analysis of Software Systems</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Software Engineering</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Machine, Data and Learning</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Advanced NLP</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Statistical Methods in AI</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Data and Applications</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Algorithm Analysis & Design</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Automata Theory</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Introduction to Algorithms Engineering</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Embedded Systems Workshop</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Science I</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Science II</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Intro to Human Sciences</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Introduction to Philosophy</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Sociology of Platform Economies</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Design Thinking - Research to Define</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Design Thinking - Idea to Evaluate</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">User Interaction and Usability of Digital Products</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Behavioral Research: Experimental Design</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">Behavioral Research: Statistical Methods</h5>
+        </div>
+      </li>
+
+      
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">UG-Independent Study( Game Design and Development )</h5>
+        </div>
+      </li>
+
+      
+
+    </ul>
+
+  </section>
+  
+
+    <!-- Languages -->
+  
+  <section class="skill">
+
+    <h3 class="h3 skills-title">Languages</h3>
+
+    <ul class="skills-list content-card">
+
+      
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">English</h5>
+          
+          <data value="100">100%</data>
+          
+        </div>
+        
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 100%;"></div>
+        </div>
+        
+      </li>
+
+      
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Hindi</h5>
+          
+          <data value="100">100%</data>
+          
+        </div>
+        
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 100%;"></div>
+        </div>
+        
+      </li>
+
+      
+
+    </ul>
+
+  </section>
+  <br>
+  
+
+</article>
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <!-- portfolio.jinja -->
+<article class="portfolio" data-page="projects">
+
+  <header>
+    <h2 class="h2 article-title">Projects</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+
+      
+      <li class="filter-item">
+        <button data-filter-btn>Software Engineering</button>
+      </li>
+      
+      <li class="filter-item">
+        <button data-filter-btn>Humanities</button>
+      </li>
+      
+      <li class="filter-item">
+        <button data-filter-btn>AI</button>
+      </li>
+      
+      <li class="filter-item">
+        <button data-filter-btn>UI/UX</button>
+      </li>
+      
+      <li class="filter-item">
+        <button data-filter-btn>VR</button>
+      </li>
+      
+
+    </ul>
+
+    <div class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-selecct-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        
+        <li class="select-item">
+          <button data-select-item>Software Engineering</button>
+        </li>
+        
+        <li class="select-item">
+          <button data-select-item>Humanities</button>
+        </li>
+        
+        <li class="select-item">
+          <button data-select-item>AI</button>
+        </li>
+        
+        <li class="select-item">
+          <button data-select-item>UI/UX</button>
+        </li>
+        
+        <li class="select-item">
+          <button data-select-item>VR</button>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+    <ul class="project-list">
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="humanities">
+        <a href="https://github.com/AadityaNarain2003/App-Store-Remake" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/appstore.png" alt="Remaking the Apple App Store" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Remaking the Apple App Store</h3>
+
+          <p class="project-category">Humanities</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="software engineering">
+        <a href="https://github.com/AadityaNarain2003/Legends-of-Stonks" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/stocks.png" alt="Legends Of Stonks" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Legends Of Stonks</h3>
+
+          <p class="project-category">Software Engineering</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="ai">
+        <a href="https://github.com/AadityaNarain2003/SMAI-Project-Image-to-Location" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/location.jpg" alt="Image to Location" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Image to Location</h3>
+
+          <p class="project-category">AI</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="ui/ux">
+        <a href="https://coin-wise-learn-grow.vercel.app" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/finance.png" alt="Gamified App for Financial Illiterate" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Gamified App for Financial Illiterate</h3>
+
+          <p class="project-category">UI/UX</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="ai">
+        <a href="https://github.com/AadityaNarain2003/ANLP-Project" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/tinystories.jpg" alt="TinyStories" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">TinyStories</h3>
+
+          <p class="project-category">AI</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="vr">
+        <a href="https://github.com/AadityaNarain2003/BRED_Unity" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/VR-Locomotion.jpg" alt="Method of Locomotion impacts Spatial Learning in VR" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Method of Locomotion impacts Spatial Learning in VR</h3>
+
+          <p class="project-category">VR</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="vr">
+        <a href="https://github.com/AadityaNarain2003/Game_Design_Dev_Project" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/game.jpg" alt="Space Game" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Space Game</h3>
+
+          <p class="project-category">VR</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="ui/ux">
+        <a href="https://github.com/AadityaNarain2003/Design-Thinking" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/designthinking.png" alt="Design Thinking" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Design Thinking</h3>
+
+          <p class="project-category">UI/UX</p>
+
+        </a>
+      </li>
+
+      
+
+      <li class="project-item  active" data-filter-item data-category="software engineering">
+        <a href="sports.iiit.ac.in" target="_blank">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+            <img src="./config/assets/projects/sportscouncil.jpeg" alt="Sports Council Website" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">Sports Council Website</h3>
+
+          <p class="project-category">Software Engineering</p>
+
+        </a>
+      </li>
+
+      
+
+    </ul>
+
+  </section>
+
+</article>
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <!-- blog.jinja -->
+<article class="blog" data-page="blogs">
+
+  <header>
+    <h2 class="h2 article-title">Blogs</h2>
+  </header>
+
+  <section class="blog-posts">
+
+    <ul class="blog-posts-list">
+
+      
+
+    </ul>
+
+  </section>
+
+</article>
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <!-- contact.jinja -->
+<article class="contact" data-page="contact">
+
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src=""
+        width="400" height="300" loading="lazy"></iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+
+    <h3 class="h3 form-title">Contact Form</h3>
+
+    <form action="mailto:aaditya.narain.avna@gmail.com" method="POST" class="form" data-form>
+
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+        <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+      </div>
+
+      <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+      <button class="form-btn" type="submit" disabled data-form-btn>
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send Message</span>
+      </button>
+
+    </form>
+
+  </section>
+
+</article>
+
+    </div>
+
+  </main>
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./src/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>

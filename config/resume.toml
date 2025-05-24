@@ -1,0 +1,232 @@
+############## Education config #################
+#################################################
+[[education]]
+title = "Wynberg-Allen School, Mussoorie"
+timeline = "2012 - 2018"
+description = "ICSE Class 10th - 94.8%"
+
+[[education]]
+title = "D.P.S. RKPuram, New Delhi"
+timeline = "2019 - 2021"
+description = "CBSE Class 12th - 96%"
+
+[[education]]
+title = "International Institute of Information Technology, Hyderabad"
+timeline = "2022 - Present"
+description = "B.Tech and M.S. by Research in Computer Science & Engineering - 8.15 CGPA (current)"
+
+
+############## Experience config ################
+#################################################
+
+[[experience]]
+title = "Software Intern (VILS AI)"
+timeline = "January 2024 - April 2024"
+description = "Worked on a web development task where using FastApi, React, Alembic, MySQL and Mongo, I was required to build a complete system. Engaged in continuous meetings with clients, honing my ability to interact effectively, gather valuable feedback, and understand the project process flow comprehensively"
+
+[[experience]]
+title = "Teaching Assistant ( Computer Programming )"
+timeline = "August 2024 - November 2024"
+description = "Helped the course instuctor teach over 350 students the basics of C Programming. Helped design lab assessment questions"
+
+[[experience]]
+title = "Teaching Assistant ( Introduction to Software System )"
+timeline = "January 2025 - April 2025"
+description = "Helped the course instuctor teach over 250 students the basics of Software Systems that included Git ,Bash ,Python, Mongo, SQL, FastAPI and other similar softwares . Helped design lab assessment and exam questions"
+
+[[experience]]
+title = "Tech Team Member ( Research Day Website)"
+timeline = "January 2025 - March 2025"
+description = "Worked alongside a team of 4 to develop the Research Day Website with next.js and fastAPI."
+
+[[experience]]
+title = "Project Lead ( Sports Council Website )"
+timeline = "August 2024 – Present"
+description = "Initiated, Designed, Developed and Maintain the Website for Sports Council IIIT-Hyderabad, while leading 2 developers on the same. The Website achieved over 1500 users."
+
+[[experience]]
+title = "Undergraduate Researcher (SERC lab, IIITH)"
+timeline = "April 2024 - Present"
+description = "Conducting research under Dr. Raman Saxena focusing on human-centered design and design thinking methodologies. Completed a summer project that provided valuable insights into gathering user opinions/problems on present existing Institute Management system and applying them to design effective, user-friendly solutions."
+
+###extra section
+
+[[extra]]
+title = "Member and Coordinator TVRQC ( Quizzing Club )"
+timeline = "August 2022 - August 2024"
+description = "Hosted over 30 events in a spam of 2 years. Lead the team for the second year."
+
+[[extra]]
+title = "Member and Coordinator ASEC ( Sports Club )"
+timeline = "August 2022 - August 2024"
+description = "Hosted over 30 events in a spam of 2 years. Lead the team for the second year."
+
+[[extra]]
+title = "Sports Deputy Secretary"
+timeline = "August 2024 - July 2025"
+description = "Coordinated and Lead a team of 29 members which hosted 6 events around the campus. Hosted 2 events with more than 900 participants. Developed a website for the team. Designed the new logo for the team and lead the social media team."
+
+############## Courses config ####################
+#################################################
+[courses]
+title = "Courses"
+enabled = true
+show_bar = false
+show_value = false
+
+# 🧮 Mathematics & Statistics
+[[course]]
+title = "Discrete Structures"
+
+[[course]]
+title = "Real Analysis"
+
+[[course]]
+title = "Linear Algebra"
+
+[[course]]
+title = "Probability and Statistics"
+
+# 💻 Programming & Systems
+[[course]]
+title = "Computer Programming"
+
+[[course]]
+title = "Digital Systems and Microcontrollers"
+
+[[course]]
+title = "Introduction to IoT"
+
+[[course]]
+title = "Computer Systems Organization"
+
+[[course]]
+title = "Data Structures and Algorithms"
+
+[[course]]
+title = "Introduction to Software Systems"
+
+[[course]]
+title = "Operating Systems and Networks"
+
+[[course]]
+title = "Software Programming for Performance"
+
+[[course]]
+title = "Computer Graphics"
+
+[[course]]
+title = "Design and Analysis of Software Systems"
+
+[[course]]
+title = "Software Engineering"
+
+# 🧠 AI & Machine Learning
+[[course]]
+title = "Machine, Data and Learning"
+
+[[course]]
+title = "Advanced NLP"
+
+[[course]]
+title = "Statistical Methods in AI"
+
+# 📊 Algorithms & Theory
+[[course]]
+title = "Data and Applications"
+
+[[course]]
+title = "Algorithm Analysis & Design"
+
+[[course]]
+title = "Automata Theory"
+
+[[course]]
+title = "Introduction to Algorithms Engineering"
+
+# 🧪 Embedded & Performance Systems
+[[course]]
+title = "Embedded Systems Workshop"
+
+# 📚 Science & Humanities
+[[course]]
+title = "Science I"
+
+[[course]]
+title = "Science II"
+
+[[course]]
+title = "Intro to Human Sciences"
+
+[[course]]
+title = "Introduction to Philosophy"
+
+[[course]]
+title = "Sociology of Platform Economies"
+
+# 🎨 Design & HCI
+[[course]]
+title = "Design Thinking - Research to Define"
+
+[[course]]
+title = "Design Thinking - Idea to Evaluate"
+
+[[course]]
+title = "User Interaction and Usability of Digital Products"
+
+# 🧠 Behavioral Science & Research
+[[course]]
+title = "Behavioral Research: Experimental Design"
+
+[[course]]
+title = "Behavioral Research: Statistical Methods"
+
+# 🧪 Independent Study & Projects
+[[course]]
+title = "UG-Independent Study( Game Design and Development )"
+
+
+
+
+############## achievements config ####################
+#################################################
+[achievements]
+title = "Achievements"
+enabled = true
+
+[[achievement]]
+title = "IIIT Run 2025"
+timeline = "Feburary 2025"
+description = "5k Marathon 3rd Place"
+
+[[achievement]]
+title = "Megathon Finalist 2023"
+timeline = "October 2023"
+description = "Finalist in Megathon 2023 where we were amongst the top 6 teams."
+
+[[achievement]]
+title = "IIT- Madras ( Foundational Level in Programming and Data Science)"
+timeline = "August 2022"
+description = "Received a certicate from IIT- Madras on Foundational Level in Porgramming and Data Science."
+
+[[achievement]]
+title = "Silver Batch ( IAYP )"
+timeline = "March 2019"
+description = "Received a Batch for doing social work around Mussoorie"
+
+############## Language config ##################
+#################################################
+[languages]
+title = "Languages"
+enabled = true
+show_bar = true
+show_value = true
+
+[[language]]
+title = "English"
+value = "100%"
+
+
+[[language]]
+title = "Hindi"
+value = "100%"

@@ -1,0 +1,92 @@
+[projects]
+title = "Projects"
+enabled = true
+
+[[project]]
+title = "Remaking the Apple App Store"
+category = "Humanities"
+image = "./config/assets/projects/appstore.png"
+url = "https://github.com/AadityaNarain2003/App-Store-Remake"
+source = "https://github.com/AadityaNarain2003/App-Store-Remake"
+description = """
+A complete revamp of the Sociology and Economy of App Store from a Developer Centric Prespective. Done in a team of 6 members.
+"""
+
+[[project]]
+title = "Legends Of Stonks"
+category = "Software Engineering"
+image = "./config/assets/projects/stocks.png"
+url = "https://github.com/AadityaNarain2003/Legends-of-Stonks"
+source = "https://github.com/AadityaNarain2003/Legends-of-Stonks"
+description = """
+A prototype implementation of a Stock Market Simulation Webapp where the complete SDLC lifecycle with Requirements, Stakeholder Analysis, ADRs, UML, Architectural Tactics, an SOA application prototype was developed.
+"""
+
+[[project]]
+title = "Image to Location"
+category = "AI"
+image = "./config/assets/projects/location.jpg"
+url = "https://github.com/AadityaNarain2003/SMAI-Project-Image-to-Location"
+source = "https://github.com/AadityaNarain2003/SMAI-Project-Image-to-Location"
+description = """
+A prototype implementation of a Stock Market Simulation Webapp where the complete SDLC lifecycle with Requirements, Stakeholder Analysis, ADRs, UML, Architectural Tactics, an SOA application prototype was developed.
+"""
+
+[[project]]
+title = "Gamified App for Financial Illiterate"
+category = "UI/UX"
+image = "./config/assets/projects/finance.png"
+url = "https://coin-wise-learn-grow.vercel.app"
+source = "https://github.com/Dileepadari/coin-wise-learn-grow/security"
+description = """
+A prototype of the app that uses gamification technique to help the financial Illiterate.
+"""
+
+[[project]]
+title = "TinyStories"
+category = "AI"
+image = "./config/assets/projects/tinystories.jpg"
+url = "https://github.com/AadityaNarain2003/ANLP-Project"
+source = "https://github.com/AadityaNarain2003/ANLP-Project"
+description = """
+Implemetation of the TinyStories paper. 
+"""
+[[project]]
+title = "Method of Locomotion impacts Spatial Learning in VR"
+category = "VR"
+image = "./config/assets/projects/VR-Locomotion.jpg"
+url = "https://github.com/AadityaNarain2003/BRED_Unity"
+source = "https://github.com/AadityaNarain2003/BRED_Unity"
+description = """
+Did a research experiment where we correlated Locomotion and spatial Learning in VR. 
+"""
+
+[[project]]
+title = "Space Game"
+category = "VR"
+image = "./config/assets/projects/game.jpg"
+url = "https://github.com/AadityaNarain2003/Game_Design_Dev_Project"
+source = "https://github.com/AadityaNarain2003/Game_Design_Dev_Project"
+description = """
+Designed and Developed a Game in VR. 
+"""
+
+[[project]]
+title = "Design Thinking"
+category = "UI/UX"
+image = "./config/assets/projects/designthinking.png"
+url = "https://github.com/AadityaNarain2003/Design-Thinking"
+source = "https://github.com/AadityaNarain2003/Design-Thinking"
+description = """
+Followed the Design Thinking method to solve a problem for students. 
+"""
+
+[[project]]
+title = "Sports Council Website"
+category = "Software Engineering"
+image = "./config/assets/projects/sportscouncil.jpeg"
+url = "sports.iiit.ac.in"
+source = "sports.iiit.ac.in"
+description = """
+Made a complete SDLC project that is being used by 1500 users 
+"""

@@ -1,0 +1,193 @@
+<!-- resume.jinja -->
+<article class="resume" data-page="resume">
+
+  <header>
+    <h2 class="h2 article-title">Resume <a href="./../../../docs/portfolio.pdf" style="text-decoration:none;font-size: 15px;" target="_blank" download>(Download)</a></h2>
+  </header>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Education</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      {% for education in resume.education | reverse %}
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{education.title}}</h4>
+
+        <span>{{education.timeline}}</span>
+
+        <p class="timeline-text">
+          {{education.description}}
+        </p>
+
+      </li>
+
+      {% endfor %}
+
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      {% for experience in resume.experience | reverse %}
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{experience.title}}</h4>
+
+        <span>{{experience.timeline}}</span>
+
+        <p class="timeline-text">
+          {{experience.description}}
+        </p>
+
+      </li>
+
+      {% endfor %}
+
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Extra-Curricular</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      {% for extra in resume.extra | reverse %}
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{extra.title}}</h4>
+
+        <span>{{extra.timeline}}</span>
+
+        <p class="timeline-text">
+          {{extra.description}}
+        </p>
+
+      </li>
+
+      {% endfor %}
+
+    </ol>
+
+  </section>
+
+   {% if resume.achievements.enabled %}
+   <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="trophy-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">{{ resume.achievements.title }}</h3>
+    </div>
+
+    <ol class="timeline-list">
+      {% for achievement in resume.achievement %}
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{ achievement.title }}</h4>
+
+        <span>{{ achievement.timeline }}</span>
+
+        <p class="timeline-text">
+          {{ achievement.description }}
+        </p>
+
+      </li>
+
+      {% endfor %}
+
+    </ol>
+
+  </section>
+  {% endif %}
+
+  <!-- My Skills -->
+
+  {% if resume.courses.enabled %}
+  <section class="skill">
+
+    <h3 class="h3 skills-title">{{resume.courses.title}}</h3>
+
+    <ul class="skills-list content-card courses" style="padding-bottom: 0;">
+
+      {% for skill in resume.course %}
+
+      <li class="skills-item" style="width: calc(50% - 35px)">
+        <div class="title-wrapper">
+          <h5 class="h5">{{skill.title}}</h5>
+        </div>
+      </li>
+
+      {% endfor %}
+
+    </ul>
+
+  </section>
+  {% endif %}
+
+    <!-- Languages -->
+  {% if resume.languages.enabled %}
+  <section class="skill">
+
+    <h3 class="h3 skills-title">{{resume.languages.title}}</h3>
+
+    <ul class="skills-list content-card">
+
+      {% for language in resume.language %}
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">{{language.title}}</h5>
+          {% if resume.languages.show_value %}
+          <data value="{{language.value[:-1]}}">{{language.value}}</data>
+          {% endif %}
+        </div>
+        {% if resume.languages.show_bar %}
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: {{language.value}};"></div>
+        </div>
+        {% endif %}
+      </li>
+
+      {% endfor %}
+
+    </ul>
+
+  </section>
+  <br>
+  {% endif %}
+
+</article>

@@ -1,0 +1,39 @@
+############### Section config ##################
+#################################################
+title = "Tech Experience"
+enabled = true # false
+
+############### Technologies ####################
+#################################################
+# Technology I have worked with
+# name = "./.../../icon_path"
+
+# Languages: Python, JavaScript, C, C++, C#, Java
+# Backend: FastAPI, Flask, Next.js, Node.js
+# Frontend: React, SvelteKit, HTML, CSS
+# Clouds & Databases: MySQL, MongoDB, SQLite
+# Web Technologies: Docker, Nginx, Apache
+# Developer Tools: Postman, VsCode, Git, GitHub, GitLab
+# VR Development: Unity, Blender
+# Other Skills: Collaboration, Networking, Leadership
+[technologies]
+java = "./config/assets/icons/java.svg"
+unity = "./config/assets/icons/unity.svg"
+python = "./config/assets/icons/python.svg"
+c = "./config/assets/icons/c.svg"
+javascript = "./config/assets/icons/javascript.svg"
+git = "./config/assets/icons/git.svg"
+html = "./config/assets/icons/html.svg"
+css = "./config/assets/icons/css.svg"
+mysql = "./config/assets/icons/mysql.svg"
+mongodb = "./config/assets/icons/mongodb.svg"
+linux = "./config/assets/icons/linux.svg"
+docker = "./config/assets/icons/docker.svg"
+nginx = "./config/assets/icons/nginx.svg"
+react = "./config/assets/icons/react.svg"
+nodejs = "./config/assets/icons/nodejs.svg"
+postman = "./config/assets/icons/postman.svg"
+flask = "./config/assets/icons/flask.svg"
+nextjs = "./config/assets/icons/nextjs.svg"
+sqlite = "./config/assets/icons/sqlite.svg"
+csharp = "./config/assets/icons/csharp.svg"

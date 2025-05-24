@@ -1,0 +1,29 @@
+## I am a student and a researcher in computer science engineering in 3rd year
+
+[[doing]]
+title = "FullStack Development"
+icon = "./config/assets/icons/laptop-code.svg"
+text = """
+I have a strong foundation in web development and I am passionate about creating user-friendly and scalable web applications.
+"""
+
+[[doing]]
+title = "Research"
+icon = "./config/assets/icons/compass.svg"
+text = """
+I work in SERC, IIIT Hyderabad as a MS by Research Student. I work in the domain of HCI at the intersection of Personality Computing and VR technologies.
+"""
+
+[[doing]]
+title = "System Design"
+icon = "./config/assets/icons/mobile.svg"
+text = """
+I like understand and designing systems that go beyond what it is currently today.
+"""
+
+[[doing]]
+title = "VR and Gamification"
+icon = "./config/assets/icons/vr.png"
+text = """
+I like to understand how Gamification and VR can be used in the applied domains of psychology, game design and other applications. 
+"""

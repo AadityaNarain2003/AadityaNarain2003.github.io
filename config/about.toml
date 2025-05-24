@@ -1,0 +1,11 @@
+name = "Aaditya Vardhan Narain"
+rol = "Software Developer"
+email = "aaditya.narain.avna@gmail.com"
+phone = "+91 8860888440"
+birthday = "April 27, 2003"
+location = "Hyderabad, India"
+avatar = "./config/assets/avatars/narain.jpg"
+username = "Aaditya_Narain"
+googlemaps = ""
+presentation = "A passionate developer and researcher. Fascinated with HCI and VR technology. I love to explore systems and system design."
+
