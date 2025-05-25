@@ -120,3 +120,33 @@ source = ""
 description = """
 Worked on a Rendering Engine that uses Ray Tracing
 """
+
+[[project]]
+title = "VILS AI Hiring Manager"
+category = "Software Engineering"
+image = "./config/assets/projects/vils.png"
+url = ""
+source = ""
+description = """
+NDA agreement, can't explain more
+"""
+
+[[project]]
+title = "RSS Reader "
+category = "Software Engineering"
+image = "./config/assets/projects/rss.png"
+url = "https://github.com/AadityaNarain2003/RSS-Reader"
+source = "https://github.com/AadityaNarain2003/RSS-Reader"
+description = """
+This project was about refactoring, adding features on top of a pre existing RSS feed system.
+"""
+
+[[project]]
+title = "Waves ( Music App )"
+category = "Software Engineering"
+image = "./config/assets/projects/waves.jpeg"
+url = ""
+source = ""
+description = """
+Created an App for music streaming and music liking
+"""
