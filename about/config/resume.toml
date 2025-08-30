@@ -35,6 +35,11 @@ timeline = "January 2025 - April 2025"
 description = "Helped the course instuctor teach over 250 students the basics of Software Systems that included Git ,Bash ,Python, Mongo, SQL, FastAPI and other similar softwares . Helped design lab assessment and exam questions"
 
 [[experience]]
+title = "Teaching Assistant ( Software System Development )"
+timeline = "August 2025 - Present"
+description = "Helping the course instuctor teach 175 M.tech students MERN and fastAPI"
+
+[[experience]]
 title = "Tech Team Member ( Research Day Website)"
 timeline = "January 2025 - March 2025"
 description = "Worked alongside a team of 4 to develop the Research Day Website with next.js and fastAPI."
@@ -65,6 +70,14 @@ description = "Hosted over 30 events in a spam of 2 years. Lead the team for the
 title = "Sports Deputy Secretary"
 timeline = "August 2024 - July 2025"
 description = "Coordinated and Lead a team of 29 members which hosted 6 events around the campus. Hosted 2 events with more than 900 participants. Developed a website for the team. Designed the new logo for the team and lead the social media team."
+
+############## Research config ################
+#################################################
+
+[[research]]
+paper = "POMS effect"
+conference = "ICVR 2025"
+link = "./config/assets/docs/POMS_Camera_Ready.pdf"
 
 ############## Courses config ####################
 #################################################

@@ -2,7 +2,7 @@
 <article class="resume" data-page="resume">
 
   <header>
-    <h2 class="h2 article-title">Resume <a href="./../../../docs/portfolio.pdf" style="text-decoration:none;font-size: 15px;" target="_blank" download>(Download)</a></h2>
+    <h2 class="h2 article-title">Resume <a href="./config/assets/docs/portfolio.pdf" style="text-decoration:none;font-size: 15px;" target="_blank" download>(Download)</a></h2>
   </header>
 
   <section class="timeline">
@@ -60,6 +60,36 @@
         <p class="timeline-text">
           {{experience.description}}
         </p>
+
+      </li>
+
+      {% endfor %}
+
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Research</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      {% for research in resume.research | reverse %}
+
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{research.paper}}</h4>
+
+        <span>{{research.conference}}</span>
+
+        <a href="./config/assets/docs/portfolio.pdf" style="text-decoration:none;font-size: 15px;" target="_blank" download>(Link)</a></h2>
 
       </li>
 
