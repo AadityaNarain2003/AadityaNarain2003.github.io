@@ -140,6 +140,10 @@ title = "Distributed Systems"
 [[course]]
 title = "Topics in Software Engineering"
 
+[[course]]
+title = "Distributed Systems"
+
+
 # 🧠 AI & Machine Learning
 [[course]]
 title = "Machine, Data and Learning"
@@ -195,6 +199,9 @@ title = "Design Thinking - Idea to Evaluate"
 
 [[course]]
 title = "User Interaction and Usability of Digital Products"
+
+
+title = "Social Science Perspectives of HCI"
 
 # 🧠 Behavioral Science & Research
 [[course]]

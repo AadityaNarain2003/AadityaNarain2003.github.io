@@ -150,3 +150,23 @@ source = ""
 description = """
 Created an App for music streaming and music liking
 """
+
+[[project]]
+title = "Chapster"
+category = "Software Engineering"
+image = ""
+url = ""
+source = ""
+description = """
+An amalgation of Napster and Chord that can run on LAN
+"""
+
+[[project]]
+title = "Human Centered RE for AI"
+category = "Software Engineering"
+image = ""
+url = ""
+source = ""
+description = """
+A project on human centered AI from the RE perspective
+"""
