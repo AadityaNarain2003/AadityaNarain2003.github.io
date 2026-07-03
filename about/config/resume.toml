@@ -240,6 +240,17 @@ title = "UG-Independent Study( Game Design and Development )"
 title = "Achievements"
 enabled = true
 
+
+[[achievement]]
+title = "Megathon Winner 2025"
+timeline = "October 2025"
+description = "Created a system to convert research papers into engaging formats"
+
+[[achievement]]
+title = "IIIT Run 2026"
+timeline = "Feburary 2026"
+description = "5k Marathon 3rd Place"
+
 [[achievement]]
 title = "IIIT Run 2025"
 timeline = "Feburary 2025"
