@@ -165,8 +165,26 @@ An amalgation of Napster and Chord that can run on LAN
 title = "Human Centered RE for AI"
 category = "Software Engineering"
 image = ""
-url = ""
+url = "https://github.com/AadityaNarain2003/AadityaNarain2003.github.io/blob/main/about/config/assets/docs/TSE_Documentation.pdf"
+source = ""
+description = """Conducted a Systematic Mapping Study of 31 peer-reviewed papers to analyze Requirements Engineering practices for Human-Centered AI, identifying research gaps and future directions for value-aligned AI system development.
+"""
+
+[[project]]
+title = "Cross Lingual Code Embeddings: An Empirical Study of Dialects, Complexity, and Correctness"
+category = "AI"
+image = ""
+url = "https://github.com/AadityaNarain2003/AadityaNarain2003.github.io/blob/main/about/config/assets/docs/99_Cross_Lingual_Code_Embeddin.pdf"
+source = ""
+description = """Conducted a large-scale study of 7 code embedding models using 6,600+ code snippets across 19 programming languages, revealing implications for code retrieval and RAG systems.
+"""
+
+[[project]]
+title = "Let It Cook: A Comparative Study of Chemical Encoders for Synthesis Prediction"
+category = "AI"
+image = ""
+url = "https://github.com/AadityaNarain2003/AadityaNarain2003.github.io/blob/main/about/config/assets/docs/MLNS_Project-1.pdf"
 source = ""
 description = """
-A project on human centered AI from the RE perspective
+Integrated pre-trained chemical language models into a molecular synthesis framework, improving reconstruction performance over the SynFormer baseline on large-scale molecule generation.
 """

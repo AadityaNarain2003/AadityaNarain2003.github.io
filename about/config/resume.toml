@@ -36,8 +36,14 @@ description = "Helped the course instuctor teach over 250 students the basics of
 
 [[experience]]
 title = "Teaching Assistant ( Software System Development )"
-timeline = "August 2025 - Present"
+timeline = "August 2025 - November 2025"
 description = "Helping the course instuctor teach 175 M.tech students MERN and fastAPI"
+
+[[experience]]
+title = "Teaching Assistant ( Design and Analysis of Software Systems )"
+timeline = "January 2026 - April 2026"
+description = "Helping the course instuctor teach 200+ students basics of Software Engineering"
+
 
 [[experience]]
 title = "Tech Team Member ( Research Day Website)"
@@ -68,16 +74,21 @@ description = "Hosted over 30 events in a spam of 2 years. Lead the team for the
 
 [[extra]]
 title = "Sports Deputy Secretary"
-timeline = "August 2024 - July 2025"
+timeline = "August 2024 - August 2025"
 description = "Coordinated and Lead a team of 29 members which hosted 6 events around the campus. Hosted 2 events with more than 900 participants. Developed a website for the team. Designed the new logo for the team and lead the social media team."
 
 ############## Research config ################
 #################################################
 
 [[research]]
-paper = "POMS effect"
+paper = "The POMS effect"
 conference = "ICVR 2025"
 link = "./config/assets/docs/POMS_Camera_Ready.pdf"
+
+[[research]]
+paper = "Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery"
+conference = "ICMI 2026"
+link = ""
 
 ############## Courses config ####################
 #################################################
@@ -149,10 +160,16 @@ title = "Distributed Systems"
 title = "Machine, Data and Learning"
 
 [[course]]
+title = "Introduction to NLP"
+
+[[course]]
 title = "Advanced NLP"
 
 [[course]]
 title = "Statistical Methods in AI"
+
+[[course]]
+title = "Machine Learning for Natural Sciences"
 
 # 📊 Algorithms & Theory
 [[course]]
