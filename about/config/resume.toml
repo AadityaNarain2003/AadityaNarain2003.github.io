@@ -88,7 +88,7 @@ link = "./config/assets/docs/POMS_Camera_Ready.pdf"
 [[research]]
 paper = "Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery"
 conference = "ICMI 2026"
-link = ""
+link = "./config/assets/docs/ICMI_Camera_Ready.pdf"
 
 ############## Courses config ####################
 #################################################
