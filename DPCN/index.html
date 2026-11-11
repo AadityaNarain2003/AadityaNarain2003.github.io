@@ -270,6 +270,7 @@ const PAGES = [
   ["Overview",[["home","Overall picture"],["pubs","Publications & venues"]]],
   ["Faculty",[["faculty","Faculty comparison"],["profile","Faculty profiles"]]],
   ["Networks",[["coauthor","Co-authorship network"],["insts","Institutional network"],["temporal","Change over time"],["cites","Citation network"]]],
+  ["Research",[["research","Research questions"]]],
   ["About",[["methods","Data & methods"]]],
 ];
 const RENDER = {};
@@ -963,6 +964,187 @@ RENDER.methods = function(){
       <li><span class="l"><b>Self-citation by author.</b> Citing works' author lists are not in the citation file.</span></li></ul>`})+`</div>`;
   h += `<div style="margin-top:16px">`+panel({title:"How to rebuild this dashboard",body:`<p>1. <code>python dpcn_analysis.py --data-dir .</code> (add <code>--scimago "scimagojr 2024.csv"</code> for impact factor)<br>2. <code>python make_dashboard.py --json analysis_output/dashboard_data.json --out index.html</code></p>`})+`</div>`;
   document.getElementById("view").innerHTML=h;
+};
+
+
+// ================================================================= RESEARCH
+// Phase II research questions: big collaborations, partner citations, faculty flags, data quality.
+const PRIVATE_RX = /saveetha|vellore institute|\bsrm\b|sri sivasubramaniya|jain university|manipal|lovely professional|chitkara|sathyabama|graphic era|amity|chandigarh university|kalinga institute|siksha|sharda|symbiosis|shoolini|koneru|karunya|kalasalingam|sastra|hindustan inst|bharath inst|chennai mathematical/i;
+const RECLASS = [
+  ["Chennai Mathematical Institute","Other","Private, deemed-to-be university","Founding member of the Indian LIGO Scientific Collaboration group (IndIGO)"],
+  ["International Centre for Theoretical Sciences","ISRO / DRDO / govt.","Centre of TIFR (Department of Atomic Energy)","LIGO Scientific Collaboration member group"],
+  ["Inter-University Centre for Astronomy and Astrophysics","University / college","UGC autonomous research centre","One of the three LIGO-India lead institutions, with RRCAT and IPR"],
+  ["Tata Institute of Fundamental Research","DAE & atomic energy","DAE (label is correct)","LIGO Scientific Collaboration member group"],
+];
+function resTeam(sc){
+  const rows=D.TS.filter(r=>r.scope===sc);
+  const P=sum(rows.map(r=>r.papers)), C=sum(rows.map(r=>r.citations));
+  const big=rows.find(r=>/^100/.test(r.authors))||{papers:0,citations:0};
+  const sm=rows.filter(r=>["1","2-3","4-5","6-9"].includes(r.authors));
+  const sp=sum(sm.map(r=>r.papers)), scit=sum(sm.map(r=>r.citations));
+  const o=ov(sc);
+  return {sc,P,C,bp:big.papers,bc:big.citations,bpS:pc(big.papers,P),bcS:pc(big.citations,C),
+    cppAll:C/P, cppEx:(C-big.citations)/(P-big.papers), cppSm:scit/sp, medC:o.median_citations, q1:o["Q1_share_of_ranked_journal_%"], rows};
+}
+const rankOf = (arr,k) => { const s=[...arr].sort((a,b)=>b[k]-a[k]); return r=>s.indexOf(r)+1; };
+
+RENDER.research = function(){
+  const T = INSTS.map(resTeam), G = resTeam("Group");
+  const rA=rankOf(T,"cppAll"), rE=rankOf(T,"cppEx"), rS=rankOf(T,"cppSm");
+  const topAll=[...T].sort((a,b)=>b.cppAll-a.cppAll)[0], topEx=[...T].sort((a,b)=>b.cppEx-a.cppEx)[0];
+  const rr=T.find(t=>/RRCAT/.test(t.sc)), ns=T.find(t=>/NISER/.test(t.sc));
+
+  // partners
+  const PTr = D.PT.filter(r=>!r[4]).map(r=>({inst:r[0],partner:r[1],type:r[2],shared:r[5],small:r[6],cites:r[7],
+      big:pc(r[5]-r[6],r[5]),cpp:r[5]?r[7]/r[5]:0,y0:r[8],y1:r[9]}));
+  const instMedCpp = INSTS.map((_,i)=>med(PTr.filter(p=>p.inst===i&&p.shared>=20).map(p=>p.cpp)));
+  PTr.forEach(p=>{ p.ratio = instMedCpp[p.inst] ? p.cpp/instMedCpp[p.inst] : 0;
+    p.driven = p.shared>=20 && p.big>=90; p.cppSmall = null; });
+  const driven = PTr.filter(p=>p.driven);
+  const ptScope = PTr.filter(p=>p.shared>=20 && inScope(p.inst));
+
+  // who cites us
+  const cit = D.EXT.filter(r=>r[1]===1 && r[4]===1).map(r=>({inst:r[0],name:r[2],links:r[3],type:r[5],priv:PRIVATE_RX.test(r[2])}));
+  const citInst = INSTS.map((n,i)=>{ const a=cit.filter(c=>c.inst===i); const t=sum(a.map(c=>c.links)), p=sum(a.filter(c=>c.priv).map(c=>c.links)); return {n,i,t,p,rows:a.length}; });
+  const sav = cit.filter(c=>/saveetha/i.test(c.name));
+  const ig = citInst.find(c=>/IGCAR/.test(c.n));
+
+  // faculty flags
+  const FL = D.F.map((f,i)=>{
+    const g=k=>f[FI[k]];
+    const papers=g("papers"), plt=g("p_lt"), cites=g("cites"), h=g("h"), hl=g("h_lt"), mc=g("mostc");
+    const bigS = papers ? pc(papers-plt,papers) : 0, mcS = cites ? pc(mc,cites) : 0;
+    const flags=[];
+    if(papers>=20 && bigS>=50) flags.push(["Big-team output","At least half of their papers have 10+ authors"]);
+    if(h>=15 && hl<=h/2) flags.push(["h-index from big teams","h-index halves or worse when 10+ author papers are removed"]);
+    if(papers>=50 && plt<5) flags.push(["Affiliation unclear","50+ papers but fewer than 5 small-team papers at the institute"]);
+    if(cites>=1000 && mcS>=50) flags.push(["One paper dominates","A single paper brings half or more of all citations"]);
+    return {i,name:g("name"),inst:g("inst"),papers,plt,bigS,cites,h,hl,mc,mcS,frac:g("frac"),flags,nf:flags.length};
+  }).filter(r=>r.nf);
+  const flScope = FL.filter(r=>inScope(r.inst));
+  const ruleN = ["Big-team output","h-index from big teams","Affiliation unclear","One paper dominates"].map(k=>[k,FL.filter(r=>r.flags.some(f=>f[0]===k)).length]);
+  const maxCit = Math.max(...D.F.map(f=>f[FI.cites]));
+
+  // big papers with no faculty attributed
+  const bigP = D.P.filter(p=>p[PI.n]>=100);
+  const orphan = bigP.filter(p=>!p[PI.facs]||!p[PI.facs].length).sort((a,b)=>b[PI.cites]-a[PI.cites]);
+  const orphanC = sum(orphan.map(p=>p[PI.cites]));
+  const cs = D.CS.find(r=>r.scope==="Group")||{};
+
+  let h = head("What is really driving the citation numbers?",
+    `Phase II research questions. Raw totals can mislead, so this page tests where the citations come from: very large collaborations, a few partner institutions, a few citing institutions and a few faculty. Per-institute comparisons always show all four institutes; the tables below them follow the institute filter above.`);
+
+  h += `<div class="grid g4">
+    ${kpi("Papers with 100+ authors",G.bpS+"%",`of all papers (${fmt(G.bp)}), but they bring <b>${G.bcS}%</b> of all citations.`,{cls:"lead"})}
+    ${kpi("RRCAT's citations from 100+ author papers",rr.bcS+"%",`${fmt(rr.bp)} papers bring ${fmt(rr.bc)} of ${fmt(rr.C)} citations.`,{cls:"lead"})}
+    ${kpi("Citations per paper, best institute",fmt(topAll.cppAll,1),`${esc(topAll.sc)} with all papers. Without 100+ author papers the leader is ${esc(topEx.sc)} (${fmt(topEx.cppEx,1)}).`,{cls:"lead"})}
+    ${kpi("Highest faculty citation total",fmt(maxCit),`No one here reaches 1,00,000, because of how this dataset caps author lists (see question 4).`,{cls:"lead"})}
+  </div>`;
+
+  h += `<div style="margin-top:16px">`+panel({title:"Main findings",body:`<ul class="list">
+    <li><span class="l"><b>The institute ranking reverses.</b> By citations per paper the order is ${[...T].sort((a,b)=>b.cppAll-a.cppAll).map(t=>esc(t.sc.split(" ")[0])).join(" > ")}. After removing papers with 100+ authors it becomes ${[...T].sort((a,b)=>b.cppEx-a.cppEx).map(t=>esc(t.sc.split(" ")[0])).join(" > ")}.</span></li>
+    <li><span class="l"><b>The high-citation partners are big collaborations.</b> ${driven.length} partner links have 90% or more of their shared papers in 10+ author teams. CMI, ICTS and IUCAA share no small-team paper with RRCAT, yet average ${fmt(Math.min(...driven.filter(p=>/Chennai Math|Theoretical Sciences|Inter-University Centre for Astro/.test(p.partner)).map(p=>p.cpp)))}+ citations per paper, all from LIGO–Virgo gravitational-wave papers.</span></li>
+    <li><span class="l"><b>A few private universities cite one institute heavily.</b> Among the Indian institutions that cite IGCAR most, ${pc(ig.p,ig.t)}% of the citing links come from private universities. Saveetha University cites BARC ${fmt(sav.find(s=>/BARC/.test(INSTS[s.inst]))?.links)} times, more than the University of Delhi.</span></li>
+    <li><span class="l"><b>Faculty totals depend on attribution rules.</b> ${fmt(FL.length)} people are flagged by at least one rule below. The biggest LIGO papers (up to ${fmt(orphan[0]?.[PI.cites])} citations each) have no faculty member attached at all.</span></li></ul>`})+`</div>`;
+
+  // ---------------- Q1
+  h += sec("1. How much of each institute's impact comes from very large collaborations?");
+  h += `<div class="grid g2">`
+    + panel({title:"Share of citations by team size",sub:"Each bar is 100% of the institute's citations, split by number of authors on the paper",body:cv("rq1a","tall")})
+    + panel({title:"Citations per paper under three counting rules",sub:"All papers; without 100+ author papers; only papers with fewer than 10 authors",body:cv("rq1b","tall")})
+    + `</div>`;
+  h += `<div style="margin-top:16px">`+panel({title:"Does the ranking hold?",sub:"Rank in brackets (1 = highest). Median citations and Q1 share are less sensitive to a few huge papers.",
+    body:`<div class="tw"><table><thead><tr><th>Institute</th><th class="n">Papers</th><th class="n">100+ author papers</th><th class="n">Their share of citations</th><th class="n">Cit./paper, all</th><th class="n">Cit./paper, without 100+</th><th class="n">Cit./paper, &lt;10 authors</th><th class="n">Median citations</th><th class="n">Q1 share</th></tr></thead><tbody>
+    ${T.map((t,i)=>`<tr><td>${dotI(i)}${esc(t.sc)}</td><td class="n">${fmt(t.P)}</td><td class="n">${fmt(t.bp)} (${t.bpS}%)</td><td class="n">${t.bcS}%</td><td class="n">${fmt(t.cppAll,1)} (${rA(t)})</td><td class="n">${fmt(t.cppEx,1)} (${rE(t)})</td><td class="n">${fmt(t.cppSm,1)} (${rS(t)})</td><td class="n">${fmt(t.medC)}</td><td class="n">${t.q1}%</td></tr>`).join("")}
+    <tr><td><b>All four</b></td><td class="n">${fmt(G.P)}</td><td class="n">${fmt(G.bp)} (${G.bpS}%)</td><td class="n">${G.bcS}%</td><td class="n">${fmt(G.cppAll,1)}</td><td class="n">${fmt(G.cppEx,1)}</td><td class="n">${fmt(G.cppSm,1)}</td><td class="n">${fmt(G.medC)}</td><td class="n">${G.q1}%</td></tr></tbody></table></div>`,
+    inf:`RRCAT drops from first to last (${fmt(rr.cppAll,1)} to ${fmt(rr.cppEx,1)} citations per paper) and NISER from second to third (${fmt(ns.cppAll,1)} to ${fmt(ns.cppEx,1)}). Once the large collaborations are set aside, the four institutes sit within a narrow band of about 10–13 citations per paper, and their median citations are nearly identical. Average citations per paper should not be used to rank these institutes without a team-size correction.`})+`</div>`;
+  h += `<div class="warnbox"><b>Limit:</b> author lists stop at 100 names, so true team sizes (often 1,000–3,000 for LIGO or CERN papers) are unknown here. Proper fractional counting (citations ÷ true number of authors) needs the full author count for these ${fmt(G.bp)} papers, which can be fetched by DOI from OpenAlex or INSPIRE-HEP.</div>`;
+
+  // ---------------- Q2
+  h += sec("2. Why do a few partner institutions show very high citations?");
+  h += `<div class="grid g2">`
+    + panel({title:"Partner links: big-team share vs citations per paper",sub:"Each dot is one partner of one institute (20+ shared papers). Log scale on the vertical axis.",body:cv("rq2a","tall")+`<div class="legend">${INSTS.map((n,i)=>inScope(i)?`<span>${dotI(i)}${esc(SHORT[i])}</span>`:"").join("")}</div>`})
+    + panel({title:"How these partners are labelled, and what they are",sub:"The current type labels mix up who funds an institute with how it collaborates",
+      body:`<div class="tw"><table><thead><tr><th>Partner</th><th>Label in data</th><th>Actual status</th><th>Link to our institutes</th></tr></thead><tbody>${RECLASS.map(r=>`<tr><td><b>${esc(shortInst(r[0]))}</b></td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td></tr>`).join("")}</tbody></table></div>`,
+      inf:`Of these, only CMI is non-governmental. Its very high citations per paper come from co-authoring LIGO–Virgo papers alongside RRCAT, not from direct work with RRCAT staff: the two share no paper with fewer than 10 authors.`})
+    + `</div>`;
+  h += `<div style="margin-top:16px">`+panel({title:"Partners whose shared papers are almost all big-team papers",sub:"20+ shared papers and 90% or more with 10+ authors. 'vs median' compares citations per paper with the institute's median partner.",
+    body:tableShell("rq2t",true),
+    inf:`Two separate clusters explain the outliers. RRCAT's links to CMI, ICTS, IUCAA and TIFR are the Indian LIGO Scientific Collaboration groups; NISER's links to Panjab, Jammu, Aligarh, Gauhati, VECC and Bose Institute come from large particle and nuclear physics collaborations at CERN and elsewhere. In both cases the institutions appear together on author lists of hundreds of people, so a high shared-citation count is evidence of joint membership in a collaboration, not of a close bilateral partnership. One outlier has a different cause: NISER and IISER Thiruvananthapuram share only 31 papers, half of them small-team, but the Planck 2018 papers lift the average to about 790 citations per paper.`})+`</div>`;
+
+  // ---------------- Q3
+  h += sec("3. Which Indian institutions cite us most, and are some unusually active?");
+  h += `<div class="grid g2">`
+    + panel({title:"Indian citing links by kind of institution",sub:"Indian institutions in each institute's top-100 citer list",body:cv("rq3a")})
+    + panel({title:"Private universities among the top Indian citers",sub:"Citing links from each institution to our papers",body:tableShell("rq3t",false,false),
+      inf:`IGCAR's private citers are led by Tamil Nadu universities close to Kalpakkam (VIT, Saveetha, SRM, SSN, Sathyabama). Three explanations are possible and should be tested separately: geographic and teaching links with Kalpakkam; topical overlap with IGCAR's highly cited materials and nanotechnology reviews; and citation stacking. Saveetha in particular has been investigated by Science and Retraction Watch for systematic self-citation used to raise rankings.`})
+    + `</div>`;
+  h += `<div class="warnbox"><b>Limit:</b> only the top 100 citing institutions per institute are in the data, and foreign institutions fill most of those places, so smaller Indian citers are missing. Counts are not normalised by the citing institution's own output. To confirm citation stacking, check how many citing papers are letters, commentaries or student papers, and whether the same small set of our papers is cited again and again.</div>`;
+
+  // ---------------- Q4
+  h += sec("4. Which faculty profiles are shaped by very large collaborations?");
+  h += `<div class="grid g4">${ruleN.map(([k,n])=>kpi(k,fmt(n),FL.find(r=>r.flags.some(f=>f[0]===k))?.flags.find(f=>f[0]===k)[1]+".")).join("")}</div>`;
+  h += `<div style="margin-top:16px">`+panel({title:"Flagged faculty",sub:`People meeting at least one rule. 'Fractional papers' credits each paper as 1 ÷ number of authors.${S.scope!=="Group"?" Filtered to "+esc(S.scope)+".":""}`,
+    body:tableShell("rq4t",true),
+    inf:`Large-collaboration physicists have very many papers and citations but little fractional credit. In the wider literature some of them pass 1,00,000 citations; none do here because (a) author lists are cut at 100 names, (b) "core faculty" needs 5 or more papers with fewer than 10 authors, and (c) the largest LIGO papers carry no faculty name at all. Treat these profiles separately rather than ranking them alongside small-team researchers.`})+`</div>`;
+  h += `<div style="margin-top:16px">`+panel({title:"Highly cited 100+ author papers with no faculty attached",sub:`${fmt(orphan.length)} of the ${fmt(bigP.length)} big-team papers in the paper list, with ${fmt(orphanC)} citations between them`,
+    body:`<div class="tw"><table><thead><tr><th>Paper</th><th class="n">Year</th><th>Institutes</th><th class="n">Citations</th><th></th></tr></thead><tbody>${orphan.slice(0,10).map(p=>`<tr><td>${esc(trunc(p[PI.title],90))}<span class="meta">${esc(p[PI.journal])}</span></td><td class="n">${p[PI.year]}</td><td>${instOf(p[PI.mask]).map(i=>dotI(i)+esc(SHORT[i])).join(" ")}</td><td class="n">${fmt(p[PI.cites])}</td><td>${doiLink(p[PI.doi])}</td></tr>`).join("")}</tbody></table></div>`,
+    inf:`These citations count for the institute but for no person, which is why the "1 lakh" faculty are invisible in the faculty table. Looking up each DOI's full author list would identify the institute's LIGO and CERN members.`})+`</div>`;
+
+  // ---------------- Q5
+  h += sec("5. How far can these numbers be trusted?");
+  h += panel({title:"Checks that change the interpretation",body:`<ul class="list">
+    <li><span class="l"><b>Possible wrong affiliation.</b> ${fmt(FL.filter(r=>r.flags.some(f=>f[0]==="Affiliation unclear")).length)} people have 50+ papers at an institute but fewer than 5 small-team papers there. Several match the names of researchers based abroad who share large author lists with NISER. They should be checked against ORCID or OpenAlex before being called faculty.</span></li>
+    <li><span class="l"><b>Two citation counts.</b> Total citations (${fmt(G.C)}) come from each paper's cited-by count, while the citation network holds ${fmt(cs["in_links (citing our papers)"])} citing links. Use one source consistently when comparing institutes.</span></li>
+    <li><span class="l"><b>Missing co-author institutes.</b> ${D.AUD["papers_with_empty_coauthor_institutes_%"]}% of papers have no co-author institute recorded, so partner counts are a lower bound.</span></li>
+    <li><span class="l"><b>Citation age.</b> Papers from 2016–17 have had far longer to collect citations than 2024–26 papers, so institutes with older output (BARC, IGCAR) look stronger on totals and newer, growing ones (NISER) look weaker.</span></li></ul>`});
+
+  document.getElementById("view").innerHTML=h;
+
+  // ---------------- charts
+  const bands=T[0].rows.map(r=>r.authors);
+  const bandCol=["#C9D9E5","#9DBBD3","#6F9CC0","#457B9D","#2E5E8C","#1D3557","#8A5A00","#C2702E"];
+  chart("rq1a",{type:"bar",data:{labels:T.map(t=>t.sc.split(" ")[0]),datasets:bands.map((b,k)=>({label:b+(b==="1"?" author":" authors"),data:T.map(t=>pc(t.rows[k].citations,t.C)),backgroundColor:bandCol[k]}))},
+    options:{indexAxis:"y",scales:{x:{stacked:true,max:100,title:axisT("% of citations")},y:{stacked:true}},plugins:{legend:{position:"bottom"}}}});
+  chart("rq1b",{type:"bar",data:{labels:T.map(t=>t.sc.split(" ")[0]),datasets:[
+    {label:"All papers",data:T.map(t=>+t.cppAll.toFixed(1)),backgroundColor:css("--q4")},
+    {label:"Without 100+ author papers",data:T.map(t=>+t.cppEx.toFixed(1)),backgroundColor:css("--q2")},
+    {label:"Fewer than 10 authors",data:T.map(t=>+t.cppSm.toFixed(1)),backgroundColor:css("--q1")}]},
+    options:{scales:{y:{title:axisT("Citations per paper")}},plugins:{legend:{position:"bottom"}}}});
+  chart("rq2a",{type:"scatter",data:{datasets:INSTS.map((n,i)=>({label:SHORT[i],data:ptScope.filter(p=>p.inst===i).map(p=>({x:p.big,y:Math.max(p.cpp,0.5),p})),
+      backgroundColor:IC(i),pointRadius:c=>{const p=c.raw?.p; return p?Math.max(3,Math.min(12,Math.sqrt(p.shared)/2)):3;}}))},
+    options:{layout:{padding:{top:14,right:14}},clip:false,scales:{x:{min:0,max:100,title:axisT("% of shared papers with 10+ authors")},y:{type:"logarithmic",max:1200,title:axisT("Citations per shared paper")}},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const p=c.raw.p; return `${p.partner} (${SHORT[p.inst]}): ${fmt(p.shared)} papers, ${p.big}% big-team, ${fmt(p.cpp,1)} cit./paper`;}}}}}});
+  chart("rq3a",{type:"bar",data:{labels:citInst.map(c=>SHORT[c.i]),datasets:[
+    {label:"Government and public",data:citInst.map(c=>c.t-c.p),backgroundColor:css("--q2")},
+    {label:"Private universities",data:citInst.map(c=>c.p),backgroundColor:css("--i1")}]},
+    options:{scales:{x:{stacked:true},y:{stacked:true,title:axisT("Citing links")}},plugins:{legend:{position:"bottom"}}}});
+
+  // ---------------- tables
+  sortable("rq2t", driven.filter(p=>inScope(p.inst)).map(p=>({...p,instN:SHORT[p.inst],ratioR:+p.ratio.toFixed(1)})),[
+    {k:"partner",label:"Partner",html:r=>`<b>${esc(shortInst(r.partner))}</b><span class="meta">${esc(r.type)}</span>`},
+    {k:"instN",label:"With",html:r=>dotI(r.inst)+esc(r.instN)},
+    {k:"shared",label:"Shared papers",n:1,fmt:fmt},
+    {k:"small",label:"With <10 authors",n:1,fmt:fmt},
+    {k:"big",label:"% 10+ authors",n:1,fmt:v=>fmt(v,1)+"%"},
+    {k:"cites",label:"Citations",n:1,fmt:fmt},
+    {k:"cpp",label:"Cit./paper",n:1,fmt:v=>fmt(v,1)},
+    {k:"ratioR",label:"vs median",n:1,fmt:v=>"×"+fmt(v,1)}],{sort:"cpp",search:r=>r.partner});
+  sortable("rq3t", cit.filter(c=>c.priv).map(c=>({...c,instN:SHORT[c.inst]})),[
+    {k:"name",label:"Citing institution",html:r=>`<b>${esc(shortInst(r.name))}</b>`},
+    {k:"instN",label:"Cites",html:r=>dotI(r.inst)+esc(r.instN)},
+    {k:"links",label:"Links",n:1,fmt:fmt}],{sort:"links",limit:1e9});
+  sortable("rq4t", flScope.map(r=>({...r,instN:SHORT[r.inst],gap:r.h-r.hl})),[
+    {k:"name",label:"Faculty",html:r=>`<b>${esc(r.name)}</b><span class="meta">${r.flags.map(f=>esc(f[0])).join("; ")}</span>`},
+    {k:"instN",label:"Institute",html:r=>dotI(r.inst)+esc(r.instN)},
+    {k:"papers",label:"Papers",n:1,fmt:fmt},
+    {k:"bigS",label:"% 10+ authors",n:1,fmt:v=>fmt(v,1)+"%"},
+    {k:"frac",label:"Fractional papers",n:1,fmt:v=>fmt(v,1)},
+    {k:"cites",label:"Citations",n:1,fmt:fmt},
+    {k:"h",label:"h",n:1,fmt:fmt},
+    {k:"hl",label:"h, <10 authors",n:1,fmt:fmt},
+    {k:"mcS",label:"Top paper's share",n:1,fmt:v=>fmt(v,1)+"%"},
+    {k:"nf",label:"Rules met",n:1,fmt:fmt}],{sort:"cites",search:r=>r.name});
 };
 
 // ---------------------------------------------------------------- boot
